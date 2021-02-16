@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+html,body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans';
+}
+
+body{
+    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('https://www.itl.cat/pngfile/big/0-7755_nature-pier-bridge-d-river-water-sunset-night.jpg') fixed no-repeat;
+    background-size: cover;
+    color: wheat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.accordion-wrapper{
+    max-width: 800px;
+}
+
+
+.accordion-item{
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid rgb(172, 130, 52);
+}
+
+.accordion-item-title{
+    padding: 10px;
+    background-color: black;
+    cursor: pointer;
+    color:  rgb(213, 104, 64);
+}
+
+
+.accordion-item-title::after{
+    float: right;
+    content: "+";
+    transform: translate(0,-50%);
+    font-size: 25px;
+}
+
+.accordion-item-content{
+    position: relative;
+    background-color: rgb(141, 81, 28);
+    height: 0;
+    overflow:hidden;
+    transition: .5s ease-in-out;
+}
+
+.accordion-item.active .accordion-item-content {
+    height: 200px;
+}
+
+.accordion-item.active .accordion-item-title::after{
+    content: "-";
+}
